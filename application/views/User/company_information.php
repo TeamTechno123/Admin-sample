@@ -30,13 +30,13 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <?php if(isset($update)){ ?>
+              <!-- <?php if(isset($update)){ ?>
                 <form action="<?php echo base_url(); ?>User/update_company" method="post" enctype="multipart/form-data" role="form">
                   <input type="hidden" name="company_id" value="<?php echo $company_id; ?>">
               <?php }else{ ?>
                 <form action="<?php echo base_url(); ?>User/save_company" method="post" enctype="multipart/form-data" role="form">
-              <?php } ?>
-
+              <?php } ?> -->
+              <form action="" method="post" enctype="multipart/form-data">
 
                 <div class="card-body row">
                   <div class="form-group col-md-12">
@@ -126,6 +126,7 @@
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
-  </div>
+  </div> 
+
 </body>
 </html>

@@ -25,32 +25,6 @@
       </div><!-- /.container-fluid -->
     </section>
 
-
-
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <!-- left column -->
-          <div class="col-md-10 offset-md-1">
-            <!-- general form elements -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Quick Example</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-
-            </div>
-
-          </div>
-          <!--/.col (left) -->
-          <!-- right column -->
-          <!--/.col (right) -->
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
-
     <section class="content">
       <div class="container-fluid">
         <hr>

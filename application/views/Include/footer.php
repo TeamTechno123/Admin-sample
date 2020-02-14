@@ -1,5 +1,11 @@
+<?php
+  $out_user_id = $this->session->userdata('out_user_id');
+  $out_company_id = $this->session->userdata('out_company_id');
+  $out_roll_id = $this->session->userdata('out_roll_id');
+  $company_info = $this->User_Model->get_info_arr_fields('company_name','company_id', $out_company_id, 'company');
+?>
 <footer class="main-footer">
-  <strong>Copyright &copy;2019-2020 <a href="<?php echo base_url(); ?>">demo company</a>.</strong>
+  <strong>Copyright &copy;<?php echo date('Y'); ?>-<?php echo date('Y')+1; ?> <a href="<?php echo base_url(); ?>"><?php echo $company_info[0]['company_name']; ?></a>.</strong>
   All rights reserved.
   <div class="float-right d-none d-sm-inline-block">
     <b>Version</b> 1.0
@@ -103,4 +109,24 @@
     //Bootstrap Duallistbox
     $('.duallistbox').bootstrapDualListbox();
   })
+</script>
+<!-- Menu Active -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    var url = window.location.href;
+    var activePage = url;
+    $('.nav-link').removeClass('active');
+    $('.has-treeview').removeClass('menu-open');
+    $('.nav-treeview').css("display", "none");
+    // alert(activePage);
+    $('.nav-link').each(function () {
+      var linkPage = this.href;
+      if (activePage == linkPage) {
+          $(this).closest(".nav-link").addClass("active");
+          $(this).closest(".has-treeview").addClass("menu-open");
+          $(this).closest(".has-treeview").find(".nav-treeview").css("display", "block");
+          $(this).closest(".has-treeview").find(".head").addClass("active");
+      }
+    });
+  });
 </script>

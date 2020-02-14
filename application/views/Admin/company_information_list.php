@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <?php
-  $page = "company_information";
-  include('head.php');
+$page = "make_information_list";
+include('head.php');
 ?>
+<style>
+  td{
+    padding:2px 10px !important;
+  }
+</style>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
+
   <!-- Navbar -->
   <?php include('navbar.php'); ?>
   <!-- /.navbar -->
+
   <!-- Main Sidebar Container -->
   <?php include('sidebar.php'); ?>
 
@@ -52,16 +59,20 @@
                 </tr>
                 </thead>
                 <tbody>
-
+                  <?php
+                  $i=0;
+                  foreach ($company_list as $list) {
+                    $i++;
+                  ?>
                     <tr>
-                      <td>1</td>
-                      <td>DEMO COMPANY</td>
+                      <td><?php echo $i; ?></td>
+                      <td><?php echo $list->company_name; ?></td>
                       <td>
-                        <a href=""> <i class="fa fa-edit"></i> </a>
-                        <a href="" onclick="return confirm('Delete this Company');" class="ml-4"> <i class="fa fa-trash"></i> </a>
+                        <a href="<?php echo base_url(); ?>Admin/edit_company/<?php echo $list->company_id; ?>"> <i class="fa fa-edit"></i> </a>
+                        <a href="<?php echo base_url(); ?>Admin/delete_company/<?php echo $list->company_id; ?>" onclick="return confirm('Delete this Company');" class="ml-4"> <i class="fa fa-trash"></i> </a>
                       </td>
                     </tr>
-
+                  <?php } ?>
                 </tbody>
               </table>
             </div>
